@@ -1,6 +1,7 @@
 {
-  "name": "uae-mulkiya-reader",
+  "name": "uae-document-reader",
   "version": "1.0.0",
+  "description": "Enterprise UAE Document Intelligence Suite for Vehicle Mulkiya, Passports, Emirates ID & Driving Licences",
   "private": true,
   "scripts": {
     "dev": "next dev",
