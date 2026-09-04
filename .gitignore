@@ -1,15 +1,24 @@
-__pycache__/
-*.py[cod]
-.venv/
-venv/
-.env
-.env.local
-.DS_Store
-.pytest_cache/
+# Dependencies
 node_modules/
-.next/
-out/
+/.pnp
+.pnp.js
+
+# Testing & Cache
+.DS_Store
 *.pem
 *.key
 *service_account*.json
 *credentials*.json
+
+# Next.js build output
+.next/
+out/
+build/
+dist/
+
+# Environment files
+.env
+.env*.local
+
+# Vercel
+.vercel
