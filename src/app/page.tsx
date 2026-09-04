@@ -183,15 +183,9 @@ export default function Home() {
 
       {/* Header */}
       <header className="header">
-        <div className="header-top-row">
-          <div className="header-badge">
-            <Sparkles size={14} color="var(--green-primary)" />
-            <span>AI Document Intelligence • Instant Verification</span>
-          </div>
-          <div className="author-badge">
-            <Code2 size={13} color="var(--green-primary)" />
-            <span>Engineered by <strong>Mohamad Darwish</strong></span>
-          </div>
+        <div className="header-badge">
+          <Sparkles size={14} color="var(--green-primary)" />
+          <span>AI Document Intelligence • Instant Verification</span>
         </div>
         <h1 className="header-title">
           UAE Document <span className="green-gradient-text">Reader Suite</span>
