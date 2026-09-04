@@ -1,0 +1,40 @@
+# No `platform:` pin — Compose builds for the host architecture. On your M4 that
+# means a native linux/arm64 image instead of an emulated amd64 one, which is
+# several times faster for PaddleOCR inference. The identical Dockerfile is used
+# to build linux/amd64 for ECS Fargate (see README).
+#
+# Values below fall back to sane defaults; override any of them in a local .env
+# file, which Compose reads automatically.
+
+services:
+  mulkiya-reader:
+    build:
+      context: .
+    image: uae-mulkiya-reader:local
+    container_name: uae-mulkiya-reader
+    ports:
+      - "${PORT:-8000}:8000"
+    environment:
+      OCR_LANGS: "${OCR_LANGS:-en,ar}"
+      MAX_UPLOAD_MB: "${MAX_UPLOAD_MB:-15}"
+      MAX_PDF_PAGES: "${MAX_PDF_PAGES:-2}"
+      MAX_BATCH_FILES: "${MAX_BATCH_FILES:-20}"
+      OCR_MAX_WIDTH: "${OCR_MAX_WIDTH:-1800}"
+      OCR_MIN_WIDTH: "${OCR_MIN_WIDTH:-1600}"
+      ENABLE_MKLDNN: "${ENABLE_MKLDNN:-}"
+      OCR_REC_INPUT_SHAPE: "${OCR_REC_INPUT_SHAPE:-}"
+      OCR_MIN_CONFIDENCE: "${OCR_MIN_CONFIDENCE:-0.35}"
+      OCR_CPU_THREADS: "${OCR_CPU_THREADS:-4}"
+      OCR_REC_BATCH_SIZE: "${OCR_REC_BATCH_SIZE:-1}"
+      OCR_SECOND_PASS_THRESHOLD: "${OCR_SECOND_PASS_THRESHOLD:-0.90}"
+      OCR_SCRIPT_OVERRIDE_MARGIN: "${OCR_SCRIPT_OVERRIDE_MARGIN:-0.15}"
+      PDF_RENDER_DPI: "${PDF_RENDER_DPI:-200}"
+      INCLUDE_RAW_OCR: "${INCLUDE_RAW_OCR:-false}"
+      OMP_NUM_THREADS: "${OCR_CPU_THREADS:-4}"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=4).status == 200 else 1)"]
+      interval: 30s
+      timeout: 6s
+      retries: 3
+      start_period: 90s

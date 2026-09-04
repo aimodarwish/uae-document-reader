@@ -1,0 +1,30 @@
+# ---- API ----
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+pydantic==2.10.4
+pydantic-settings==2.7.0
+
+# ---- imaging ----
+pillow==11.0.0
+numpy==1.26.4
+pypdfium2==4.30.0
+
+# ---- OCR ----
+# paddlepaddle 3.2.2 is the newest release that still ships a
+# manylinux2014_aarch64 wheel (3.3.x dropped it). That is what lets this one
+# Dockerfile build natively on Apple Silicon AND on x86 for ECS Fargate.
+#
+# PaddleOCR 3.x pulls paddlex[ocr-core], which downloads model weights from
+# Hugging Face by default (PADDLE_PDX_MODEL_SOURCE=huggingface) instead of
+# Baidu's bcebos CDN -- bcebos is unreachable from this network, which is what
+# broke the PaddleOCR 2.x build.
+paddlepaddle==3.2.2
+paddleocr==3.5.0
+
+# NOTE: do NOT add opencv here. paddlex pins opencv-contrib-python==4.10.0.84
+# and checks for it by distribution name via importlib.metadata, so the headless
+# twin does not satisfy the check -- swapping it in breaks PDFReaderBackend.
+# Every opencv distribution shares the same cv2/ directory, so installing a
+# second one silently corrupts the first. scripts/check-opencv.sh enforces that
+# exactly one is present.

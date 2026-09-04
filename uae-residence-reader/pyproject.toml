@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uae-residence-document-reader"
+version = "1.0.0"
+description = "UAE Residence workflow: Emirates ID, passport and UAE driving licence extraction"
+requires-python = ">=3.10"
+dependencies = [
+  "pydantic>=2.10,<3",
+  "Pillow>=11.1,<13",
+  "numpy>=2,<2.3",
+  "opencv-python-headless>=4.11,<5",
+  "pypdfium2>=4.30,<6",
+  "pillow-heif>=1.1,<2",
+  "zxing-cpp>=2.3,<3",
+  "rapidfuzz>=3.13,<4",
+  "pycountry>=24.6,<25",
+]
+
+[project.optional-dependencies]
+web = [
+  "fastapi==0.141.1",
+  "gradio==6.20.0",
+  "psutil>=7,<8",
+]
+local-ocr = [
+  "paddleocr[doc-parser]==3.7.0",
+  "paddlepaddle==3.3.1",
+]
+cloud-ocr = ["google-cloud-documentai==3.15.0"]
+
+[tool.setuptools.packages.find]
+include = ["car_rental_document_reader*"]
