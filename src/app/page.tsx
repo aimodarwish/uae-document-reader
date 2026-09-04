@@ -175,6 +175,12 @@ export default function Home() {
 
   return (
     <div className="container">
+      {/* Top Floating Corner Creator Badge */}
+      <div className="top-corner-credit">
+        <span className="pulse-dot" />
+        <span>Developed by <strong>Mohamad Darwish</strong></span>
+      </div>
+
       {/* Header */}
       <header className="header">
         <div className="header-top-row">
@@ -803,9 +809,12 @@ export default function Home() {
           </div>
         </div>
         <div className="footer-credits">
-          <p>
-            Designed & Engineered by <span className="author-highlight">Mohamad Darwish</span> • UAE Document Intelligence Suite
-          </p>
+          <div className="footer-credits-title">
+            تم تطوير وبناء هذا النظام بالكامل من قبل <span className="author-highlight">Mohamad Darwish</span>
+          </div>
+          <div className="footer-credits-sub">
+            Architected & Engineered by Mohamad Darwish • UAE Document Intelligence Suite
+          </div>
         </div>
       </footer>
     </div>

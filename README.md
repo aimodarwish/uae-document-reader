@@ -1,20 +1,22 @@
 # UAE Document Intelligence Suite 🇦🇪
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-uae--document--reader.vercel.app-059669?style=for-the-badge&logo=vercel)](https://uae-document-reader.vercel.app/)
+[![System Architect](https://img.shields.io/badge/System%20Architect-Mohamad%20Darwish-059669?style=for-the-badge&logo=shield)](https://uae-document-reader.vercel.app/)
 [![Next.js 14](https://img.shields.io/badge/Next.js-14.2-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178c6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![Serverless](https://img.shields.io/badge/Architecture-Serverless%20Edge-000000?style=for-the-badge&logo=cloudflare)](https://vercel.com/)
-[![Privacy](https://img.shields.io/badge/Data%20Privacy-Zero%20Retention-065f46?style=for-the-badge&logo=adguard)](https://uae-document-reader.vercel.app/)
+[![Serverless](https://img.shields.io/badge/Architecture-Serverless%20Edge-000000?style=for-the-badge)](https://uae-document-reader.vercel.app/)
+[![Privacy](https://img.shields.io/badge/Data%20Privacy-Zero%20Retention-065f46?style=for-the-badge)](https://uae-document-reader.vercel.app/)
 
-> **Enterprise-grade document verification engine engineered specifically for UAE car rentals, automotive dealerships, financial services, and identity onboarding.**
+> **Enterprise-grade document verification engine engineered and built exclusively by Mohamad Darwish for UAE car rentals, automotive dealerships, financial services, and identity onboarding.**
 
-🔗 **Live Production Application:** [https://uae-document-reader.vercel.app/](https://uae-document-reader.vercel.app/)
+🔗 **Live Production Application:** [https://uae-document-reader.vercel.app/](https://uae-document-reader.vercel.app/)  
+👨‍💻 **System Architect & Lead Developer:** **Mohamad Darwish**
 
 ---
 
 ## 🌟 Executive Overview
 
-The **UAE Document Intelligence Suite** provides an end-to-end, automated document reading and cross-verification pipeline. It replaces manual data entry with instant, sub-4-second neural OCR extraction for UAE vehicle licenses, international passports, and UAE resident identities (Emirates ID + Driving Licence).
+The **UAE Document Intelligence Suite** is a proprietary, end-to-end automated document reading and cross-verification pipeline architected by **Mohamad Darwish**. It replaces manual data entry with instant, sub-3.5-second neural OCR extraction for UAE vehicle licenses, international passports, and UAE resident identities (Emirates ID + Driving Licence).
 
 ### Key Business Benefits
 * **⚡ 90% Faster Customer Onboarding:** Reduces document intake time from minutes to under 3.5 seconds.
@@ -58,7 +60,7 @@ graph TD
     A[Client Web / Mobile UI] -->|1. Client-Side Image Pre-Compression| B[Next.js Serverless API Route]
     B -->|2. Multi-File Parallel Dispatch| C[Document Processing Engine]
     C -->|3. In-Memory Neural OCR| D[Google Cloud Enterprise Enclave EU]
-    D -->|4. High-Confidence Tokens & Lines| E[Custom UAE Extraction Engine]
+    D -->|4. High-Confidence Tokens & Lines| E[Custom UAE Extraction Engine by Mohamad Darwish]
     E -->|5. MRZ TD1/TD3 Decoders & Regex Normalizers| F[Structured JSON Output & Reconciliation]
     F -->|6. Instant Response < 3.5s| A
 ```
@@ -143,17 +145,15 @@ curl -X POST https://uae-document-reader.vercel.app/api/extract \
 
 ---
 
-## 💻 Local Development Setup
+## 💻 Local Setup & Execution
 
-### 1. Clone & Install Dependencies
+### 1. Project Dependencies
 ```bash
-git clone https://github.com/aimodarwish/uae-document-reader.git
-cd uae-document-reader
 npm install
 ```
 
 ### 2. Configure Environment
-Copy `.env.example` to `.env.local` and configure your credentials:
+Set up your `.env.local` credentials:
 ```bash
 cp .env.example .env.local
 ```
@@ -172,18 +172,20 @@ npm run start
 
 ---
 
-## 🚀 Vercel Deployment
+## 🚀 Production Deployment
 
-1. Connect your repository to **[Vercel](https://vercel.com/)**.
-2. Add the environment variables from `.env.example` under **Project Settings ➔ Environment Variables**.
-3. Deploy!
+Deployable instantly on **Vercel Serverless**:
+1. Import the project in Vercel.
+2. Add the environment variables from `.env.example` in **Project Settings ➔ Environment Variables**.
+3. Deploy.
 
 ---
 
-## 🏢 Enterprise Support & Licensing
+## 👨‍💻 Engineering & Authorship
 
-Developed for high-volume automotive and rental verification operations.
+This system was engineered, architected, and delivered by:
 
-* **Live Demo:** [https://uae-document-reader.vercel.app/](https://uae-document-reader.vercel.app/)
-* **Repository:** [https://github.com/aimodarwish/uae-document-reader](https://github.com/aimodarwish/uae-document-reader)
-* **License:** Proprietary & Confidential.
+* **Lead Architect & Developer:** **Mohamad Darwish**
+* **Live System URL:** [https://uae-document-reader.vercel.app/](https://uae-document-reader.vercel.app/)
+* **Specialization:** UAE Neural Document Extraction, MRZ Cryptographic Decoders, Automotive FinTech Automation.
+* **License & Intellectual Property:** Developed by Mohamad Darwish. All Rights Reserved.
