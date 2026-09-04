@@ -98,6 +98,15 @@ html, body {
   margin-bottom: 2.5rem;
 }
 
+.header-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
 .header-badge {
   display: inline-flex;
   align-items: center;
@@ -109,10 +118,34 @@ html, body {
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--green-primary);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  margin-bottom: 1.25rem;
   box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1);
+}
+
+.author-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 1.1rem;
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.author-badge strong {
+  color: var(--green-dark);
+  font-weight: 700;
+}
+
+.author-badge:hover {
+  border-color: var(--emerald-border);
+  background: #ecfdf5;
 }
 
 .header-title {
@@ -600,17 +633,42 @@ html, body {
   border-color: var(--emerald-border);
 }
 
-/* Footer security badge */
-.security-footer {
+/* Footer security badge & credits */
+.security-footer-container {
   margin-top: 3.5rem;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.security-footer {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2rem;
   color: var(--text-muted);
   font-size: 0.85rem;
-  border-top: 1px solid var(--border-subtle);
-  padding-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-credits {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 0.45rem 1.25rem;
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: 9999px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+}
+
+.author-highlight {
+  color: var(--green-primary);
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .security-item {

@@ -20,6 +20,7 @@ import {
   User,
   Globe,
   Award,
+  Code2,
 } from "lucide-react";
 
 type TabType = "mulkiya" | "passport" | "residence";
@@ -176,9 +177,15 @@ export default function Home() {
     <div className="container">
       {/* Header */}
       <header className="header">
-        <div className="header-badge">
-          <Sparkles size={14} color="var(--green-primary)" />
-          <span>AI Document Intelligence • Instant Verification</span>
+        <div className="header-top-row">
+          <div className="header-badge">
+            <Sparkles size={14} color="var(--green-primary)" />
+            <span>AI Document Intelligence • Instant Verification</span>
+          </div>
+          <div className="author-badge">
+            <Code2 size={13} color="var(--green-primary)" />
+            <span>Engineered by <strong>Mohamad Darwish</strong></span>
+          </div>
         </div>
         <h1 className="header-title">
           UAE Document <span className="green-gradient-text">Reader Suite</span>
@@ -779,19 +786,26 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Security Footer */}
-      <footer className="security-footer">
-        <div className="security-item">
-          <Lock size={15} color="var(--green-primary)" />
-          <span>In-Memory Zero Retention</span>
+      {/* Security Footer & Creator Credit */}
+      <footer className="security-footer-container">
+        <div className="security-footer">
+          <div className="security-item">
+            <Lock size={15} color="var(--green-primary)" />
+            <span>In-Memory Zero Retention</span>
+          </div>
+          <div className="security-item">
+            <ShieldCheck size={15} color="var(--green-primary)" />
+            <span>Encrypted Cloud Security (EU Enclave)</span>
+          </div>
+          <div className="security-item">
+            <Info size={15} color="var(--green-primary)" />
+            <span>Vercel Serverless Ready</span>
+          </div>
         </div>
-        <div className="security-item">
-          <ShieldCheck size={15} color="var(--green-primary)" />
-          <span>Encrypted Cloud Security (EU Enclave)</span>
-        </div>
-        <div className="security-item">
-          <Info size={15} color="var(--green-primary)" />
-          <span>Vercel Serverless Ready</span>
+        <div className="footer-credits">
+          <p>
+            Designed & Engineered by <span className="author-highlight">Mohamad Darwish</span> • UAE Document Intelligence Suite
+          </p>
         </div>
       </footer>
     </div>
